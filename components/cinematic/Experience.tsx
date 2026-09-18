@@ -4,6 +4,7 @@ import Atmosphere from './Atmosphere';
 import IntroScene from './IntroScene';
 import ProductScene from '@/scenes/ProductScene';
 import FinalScene from '@/scenes/FinalScene';
+import WhatsAppButton from './WhatsAppButton';
 import { products } from '@/data/products';
 
 const chapters = ['Fuxion', ...products.map(p => p.name), 'Tu ritual'];
@@ -53,5 +54,6 @@ export default function Experience() {
       <FinalScene replay={() => goTo(0)} />
       <footer className="experience-controls"><div className="timeline-track"><div className="timeline-fill" /></div><span className="chapter-count">0{chapter + 1}<span> / 05</span></span><nav aria-label="Capítulos de la experiencia">{chapters.map((label, index) => <button key={label} onClick={() => goTo(index)} aria-current={chapter === index ? 'step' : undefined}><span className="chapter-dot" />{label}</button>)}</nav><span className="scroll-caption">SCROLL PARA EXPLORAR <span aria-hidden="true">↓</span></span></footer>
     </div>
+    <WhatsAppButton />
   </main>;
 }
