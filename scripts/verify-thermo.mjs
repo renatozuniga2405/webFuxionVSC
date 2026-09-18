@@ -82,7 +82,7 @@ try {
   assert.equal(await page.locator('.pin-spacer').count(),1);
  }
  results.push('Resize + orientation: progress preserved, one ScrollTrigger pin');
- for(const label of ['NOCARB-T','BEAUTY-IN','THERMO T3']){
+ for(const label of ['NOCARB-T','BEAUTY-IN','THERMO-T']){
   await page.getByRole('button',{name:label,exact:true}).click();await page.waitForTimeout(1700);
   assert.equal(await page.getByRole('button',{name:label,exact:true}).getAttribute('aria-current'),'step');
  }
@@ -91,14 +91,14 @@ try {
  assert.equal(await page.locator('.scroll-caption').evaluate(el=>+getComputedStyle(el).opacity),0);
  results.push('Chapter navigation, keyboard navigation and final scroll prompt');
  await page.getByRole('button',{name:'Ver sin animación'}).click();await page.waitForTimeout(400);
- await page.getByRole('button',{name:'THERMO T3',exact:true}).click();
+ await page.getByRole('button',{name:/^THERMO/}).click();
  assert.equal(await page.locator('.pin-spacer').count(),0);
  assert.ok(await page.locator('#thermo-t .glass-assembly').isVisible());
  assert.equal(await page.locator('#thermo-t .thermo-mouth').evaluate(el=>+getComputedStyle(el).opacity),0);
  await page.screenshot({path:`dir/static.png`.replace('dir',dir)});
  results.push('Manual static view: closed sachet, prepared glass, copy and navigation');
  await page.emulateMedia({reducedMotion:'reduce'});await page.reload();await page.waitForTimeout(500);
- await page.getByRole('button',{name:'THERMO T3',exact:true}).click();
+ await page.getByRole('button',{name:/^THERMO/}).click();
  assert.equal(await page.locator('.pin-spacer').count(),0);
  assert.ok(await page.locator('#thermo-t .glass-assembly').isVisible());
  await page.screenshot({path:`${dir}/reduced-motion.png`});
