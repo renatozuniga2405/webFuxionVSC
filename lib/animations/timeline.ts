@@ -74,43 +74,31 @@ export function createExperience(root: HTMLElement, onChapter: (chapter: number)
       const start = i === 0 ? 3.00 : i === 1 ? 7.20 : 12.30;
       if (i === 0) {
         thermo = createThermoVideoScene(scene);
-        gsap.set(q('.eyebrow, h2, .editorial-subtitle, .product-description, .product-note, .preparation-note'), { opacity: 0, y: 14, filter: 'blur(5px)' });
-        gsap.set(q('.editorial-scrim'), { opacity: .16 });
+        gsap.set(q('.product-content-panel'), { autoAlpha: 0, y: 22, filter: 'blur(6px)' });
+        gsap.set(q('.editorial-scrim'), { opacity: .12 });
         timeline.to(thermo.state, { progress: 1, duration: 3.6, ease: 'none', onUpdate: thermo.render }, start)
           .to(scene, { autoAlpha: 1, duration: 0.2 }, start)
           .to('.backlight', { backgroundColor: product.accent, duration: 0.8 }, start)
           .fromTo(q('.thermo-video'), { autoAlpha: 0, scale: 1.015 }, { autoAlpha: 1, scale: 1, duration: 0.32 }, start)
-          .to(q('.eyebrow'), { opacity: 1, y: 0, filter: 'blur(0px)', duration: .26 }, start + .26)
-          .to(q('h2'), { opacity: 1, y: 0, filter: 'blur(0px)', duration: .32 }, start + .34)
-          .to(q('.editorial-subtitle'), { opacity: 1, y: 0, filter: 'blur(0px)', duration: .30 }, start + 2.12)
-          .to(q('.product-description'), { opacity: 1, y: 0, filter: 'blur(0px)', duration: .30 }, start + 2.25)
-          .to(q('.editorial-scrim'), { opacity: .76, duration: .28 }, start + 2.72)
-          .to(q('.product-note'), { opacity: 1, y: 0, filter: 'blur(0px)', stagger: .12, duration: .28 }, start + 2.98)
-          .to(q('.preparation-note'), { opacity: .78, y: 0, filter: 'blur(0px)', duration: .22 }, start + 3.28)
-          .to(q('.product-note'), { opacity: 0, y: -8, filter: 'blur(2px)', stagger: .06, duration: .14 }, start + 4.0)
-          .to(q('.editorial-subtitle, .product-description, .preparation-note'), { opacity: 0, y: -8, filter: 'blur(2px)', duration: .14 }, start + 4.10)
-          .to(q('.eyebrow, h2'), { opacity: 0, y: -8, filter: 'blur(2px)', duration: .14 }, start + 4.18)
+          .to(q('.product-content-panel'), { autoAlpha: 1, y: 0, filter: 'blur(0px)', duration: 0.55, ease: 'power2.out' }, start + 1.00)
+          .to(q('.editorial-scrim'), { opacity: .55, duration: 0.4 }, start + 1.00)
+          .to(q('.product-content-panel'), { autoAlpha: 0, y: -16, filter: 'blur(4px)', duration: 0.32, ease: 'power2.in' }, start + 3.90)
+          .to(q('.editorial-scrim'), { opacity: 0, duration: 0.25 }, start + 3.95)
           .to(scene, { autoAlpha: 0, duration: 0.12 }, start + 4.30);
         return;
       }
       if (i === 1) {
         nocarb = createNocarbVideoScene(scene);
-        gsap.set(q('.eyebrow, h2, .editorial-subtitle, .product-description, .product-note, .preparation-note'), { opacity: 0, y: 14, filter: 'blur(5px)' });
-        gsap.set(q('.editorial-scrim'), { opacity: .14 });
+        gsap.set(q('.product-content-panel'), { autoAlpha: 0, y: 22, filter: 'blur(6px)' });
+        gsap.set(q('.editorial-scrim'), { opacity: .12 });
         timeline.to(nocarb.state, { progress: 1, duration: 4.0, ease: 'none', onUpdate: nocarb.render }, start)
           .to(scene, { autoAlpha: 1, duration: 0.12 }, start)
           .to('.backlight', { backgroundColor: product.accent, duration: 0.45 }, start + 0.20)
           .fromTo(q('.nocarb-video'), { autoAlpha: 0 }, { autoAlpha: 1, duration: 0.10 }, start + 0.16)
-          .to(q('.eyebrow'), { opacity: 1, y: 0, filter: 'blur(0px)', duration: .26 }, start + .26)
-          .to(q('h2'), { opacity: 1, y: 0, filter: 'blur(0px)', duration: .32 }, start + .34)
-          .to(q('.editorial-subtitle'), { opacity: 1, y: 0, filter: 'blur(0px)', duration: .30 }, start + 2.32)
-          .to(q('.product-description'), { opacity: 1, y: 0, filter: 'blur(0px)', duration: .30 }, start + 2.46)
-          .to(q('.editorial-scrim'), { opacity: .72, duration: .28 }, start + 3.06)
-          .to(q('.product-note'), { opacity: 1, y: 0, filter: 'blur(0px)', stagger: .12, duration: .28 }, start + 3.32)
-          .to(q('.preparation-note'), { opacity: .78, y: 0, filter: 'blur(0px)', duration: .22 }, start + 3.62)
-          .to(q('.product-note'), { opacity: 0, y: -8, filter: 'blur(2px)', stagger: .06, duration: .14 }, start + 4.32)
-          .to(q('.editorial-subtitle, .product-description, .preparation-note'), { opacity: 0, y: -8, filter: 'blur(2px)', duration: .14 }, start + 4.44)
-          .to(q('.eyebrow, h2'), { opacity: 0, y: -8, filter: 'blur(2px)', duration: .14 }, start + 4.54)
+          .to(q('.product-content-panel'), { autoAlpha: 1, y: 0, filter: 'blur(0px)', duration: 0.55, ease: 'power2.out' }, start + 1.00)
+          .to(q('.editorial-scrim'), { opacity: .55, duration: 0.4 }, start + 1.00)
+          .to(q('.product-content-panel'), { autoAlpha: 0, y: -16, filter: 'blur(4px)', duration: 0.32, ease: 'power2.in' }, start + 4.25)
+          .to(q('.editorial-scrim'), { opacity: 0, duration: 0.25 }, start + 4.30)
           .to(scene, { autoAlpha: 0, scale: 1.1, duration: 0.45 }, start + 4.72)
           .fromTo('.transition-light', { opacity: 0, scale: 0.6, xPercent: -15 }, { opacity: 0.5, scale: 1.2, xPercent: 15, duration: 0.25 }, start + 4.75)
           .to('.transition-light', { opacity: 0, scale: 1.8, duration: 0.3 }, start + 5.03);
@@ -121,23 +109,20 @@ export function createExperience(root: HTMLElement, onChapter: (chapter: number)
         // Start BEAUTY while NOCARB is still fading so the stage never falls
         // back to its dark base layer between the two real-video chapters.
         const beautyStart = 11.70;
-        gsap.set(q('.eyebrow, h2, .editorial-subtitle, .product-description, .product-note, .preparation-note'), { opacity: 0, y: 12, filter: 'blur(4px)' });
+        gsap.set(q('.product-content-panel'), { autoAlpha: 0, y: 22, filter: 'blur(6px)' });
         gsap.set(q('.editorial-scrim'), { opacity: .10 });
         timeline.to(beauty.state, { progress: 1, duration: 4.1, ease: 'none', onUpdate: beauty.render }, beautyStart)
           .to(scene, { autoAlpha: 1, duration: .12 }, beautyStart)
           .to('.backlight', { backgroundColor: product.accent, duration: .35 }, beautyStart + .18)
           .fromTo(q('.beauty-video'), { autoAlpha: 0 }, { autoAlpha: 1, duration: .12 }, beautyStart)
-          .to(q('.eyebrow'), { opacity: 1, y: 0, filter: 'blur(0px)', duration: .26 }, beautyStart + .26)
-          .to(q('h2'), { opacity: 1, y: 0, filter: 'blur(0px)', duration: .32 }, beautyStart + .34)
-          .to(q('.editorial-subtitle'), { opacity: 1, y: 0, filter: 'blur(0px)', duration: .30 }, beautyStart + 2.35)
-          .to(q('.product-description'), { opacity: 1, y: 0, filter: 'blur(0px)', duration: .30 }, beautyStart + 2.50)
-          .to(q('.editorial-scrim'), { opacity: .56, duration: .28 }, beautyStart + 3.12)
-          .to(q('.product-note'), { opacity: 1, y: 0, filter: 'blur(0px)', stagger: .12, duration: .28 }, beautyStart + 3.38)
-          .to(q('.preparation-note'), { opacity: .76, y: 0, filter: 'blur(0px)', duration: .22 }, beautyStart + 3.70)
+          .to(q('.product-content-panel'), { autoAlpha: 1, y: 0, filter: 'blur(0px)', duration: 0.55, ease: 'power2.out' }, beautyStart + 1.00)
+          .to(q('.editorial-scrim'), { opacity: .45, duration: 0.4 }, beautyStart + 1.00)
+          .to(q('.product-content-panel'), { autoAlpha: 0, y: -16, filter: 'blur(4px)', duration: 0.32, ease: 'power2.in' }, beautyStart + 4.55)
+          .to(q('.editorial-scrim'), { opacity: 0, duration: 0.25 }, beautyStart + 4.60)
           .to(scene, { autoAlpha: 0, duration: .12 }, beautyStart + 5.0);
         return;
       }
-      gsap.set(q('.product-editorial, .product-note, .preparation-note'), { opacity: 0, y: 18 });
+      gsap.set(q('.product-content-panel'), { autoAlpha: 0, y: 22 });
       gsap.set(q('.glass-assembly'), { opacity: 0, y: 80 });
       gsap.set(q('.glass-liquid'), { scaleY: 0.04, transformOrigin: '50% 100%' });
       gsap.set(q('.powder'), { opacity: 0, scaleY: 0, transformOrigin: '50% 0%' });
@@ -145,7 +130,7 @@ export function createExperience(root: HTMLElement, onChapter: (chapter: number)
       timeline.to(scene, { autoAlpha: 1, duration: 0.35 }, start)
         .to('.backlight', { backgroundColor: product.accent, duration: 0.8 }, start)
         .to(q('.sachet'), { x: 0, y: 0, scale: 1, duration: 0.75 }, start)
-        .to(q('.product-editorial'), { opacity: 1, y: 0, duration: 0.55 }, start + 0.22)
+        .to(q('.product-content-panel'), { autoAlpha: 1, y: 0, duration: 0.5 }, start + 1.00)
         .to(q('.sachet'), { x: () => mobile() ? -15 : 35, y: () => mobile() ? -30 : -80, scale: () => mobile() ? 0.85 : 0.78, rotation: product.sceneConfig.pourTilt, duration: 0.65 }, start + 0.85)
         .to(q('.sachet-tear'), { x: 28, y: -55, rotation: 18, opacity: 0, duration: 0.35 }, start + 1)
         .to(q('.glass-assembly'), { opacity: 1, y: 0, duration: 0.5 }, start + 1.05)
@@ -154,8 +139,7 @@ export function createExperience(root: HTMLElement, onChapter: (chapter: number)
         .to(q('.glass-liquid'), { scaleY: 0.75, duration: 0.65 }, start + 1.58)
         .to(q('.liquid-swirl'), { rotation: 240 + i * 40, scale: 1.2, duration: 0.9 }, start + 1.65)
         .to(q('.powder'), { opacity: 0, duration: 0.25 }, start + 2.1)
-        .to(q('.product-note'), { opacity: 1, y: 0, stagger: 0.18, duration: 0.35 }, start + 2.25)
-        .to(q('.preparation-note'), { opacity: 0.65, y: 0, duration: 0.3 }, start + 2.4)
+        .to(q('.product-content-panel'), { autoAlpha: 0, y: -16, duration: 0.3 }, start + 2.80)
         .to(scene, { autoAlpha: 0, scale: i === 2 ? 0.96 : 1.1, duration: 0.45 }, start + 3.05)
         .fromTo('.transition-light', { opacity: 0, scale: 0.6, xPercent: -15 }, { opacity: 0.5, scale: 1.2, xPercent: 15, duration: 0.25 }, start + 3.08)
         .to('.transition-light', { opacity: 0, scale: 1.8, duration: 0.3 }, start + 3.33);

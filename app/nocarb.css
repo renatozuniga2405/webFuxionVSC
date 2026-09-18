@@ -4,7 +4,9 @@
 .is-cinematic .nocarb-scene .nocarb-procedural{display:none}
 .nocarb-scene .product-editorial,.nocarb-scene .product-notes,.nocarb-scene .preparation-note{z-index:3;text-shadow:0 2px 18px rgb(13 8 5 / .46)}
 .nocarb-scene .editorial-scrim{position:absolute;inset:0;z-index:2;pointer-events:none;opacity:0;background:linear-gradient(90deg,rgb(22 14 8 / .48) 0%,rgb(22 14 8 / .29) 36%,rgb(22 14 8 / .08) 60%,transparent 76%)}
-.nocarb-scene .product-editorial::before,.nocarb-scene .product-notes::before{content:"";position:absolute;inset:-20px -18px;z-index:-1;background:linear-gradient(90deg,rgb(21 12 7 / .40),rgb(21 12 7 / .12) 70%,transparent);filter:blur(10px);pointer-events:none}
+.nocarb-scene .product-content-panel .product-editorial,.nocarb-scene .product-content-panel .product-notes{position:static;left:auto;top:auto;width:100%}
+.nocarb-scene .product-content-panel .product-editorial::before,.nocarb-scene .product-content-panel .product-notes::before{display:none}
+.nocarb-scene:not(:has(.product-content-panel)) .product-editorial::before,.nocarb-scene:not(:has(.product-content-panel)) .product-notes::before{content:"";position:absolute;inset:-20px -18px;z-index:-1;background:linear-gradient(90deg,rgb(21 12 7 / .40),rgb(21 12 7 / .12) 70%,transparent);filter:blur(10px);pointer-events:none}
 .experience:not(.is-cinematic) .nocarb-scene .nocarb-procedural{display:none}
 .experience:not(.is-cinematic) .nocarb-scene .nocarb-video{opacity:1}
 @media(max-width:699px){.nocarb-video{object-position:54% center}.nocarb-scene .editorial-scrim{background:linear-gradient(0deg,rgb(22 14 8 / .54) 0%,rgb(22 14 8 / .24) 44%,transparent 74%)}.nocarb-scene .product-editorial::before,.nocarb-scene .product-notes::before{inset:-13px -12px;background:linear-gradient(180deg,rgb(21 12 7 / .46),rgb(21 12 7 / .1))}}

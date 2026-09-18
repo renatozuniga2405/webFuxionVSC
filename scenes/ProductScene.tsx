@@ -24,7 +24,12 @@ export default function ProductScene({ product, index, staticFrame }: { product:
     {beauty && <div className="beauty-video-layer" aria-hidden="true"><video ref={video} className="beauty-video" muted playsInline preload="metadata" poster={assetPath('/videos/beauty-in/beauty-in-poster.png')}><source src={assetPath('/videos/beauty-in/beauty-in-preparation-v1.mp4')} type="video/mp4" /></video></div>}
     <div className="editorial-scrim" aria-hidden="true" />
     <div className="scene-watermark" aria-hidden="true">{product.name}</div>
-    <div className="product-editorial"><p className="eyebrow">0{index + 1} <span /> EL RITUAL</p><h2 id={`${product.slug}-title`}>{product.name}</h2><p className="editorial-subtitle">{product.subtitle}</p><p className="product-description">{product.description}</p></div>
+    <div className="product-content-panel">
+      <div className="product-editorial"><p className="eyebrow">0{index + 1} <span /> EL RITUAL</p><h2 id={`${product.slug}-title`}>{product.name}</h2><p className="editorial-subtitle">{product.subtitle}</p><p className="product-description">{product.description}</p></div>
+      <div className="product-panel-divider" aria-hidden="true" />
+      <div className="product-notes">{product.benefits.map((benefit, i) => <div className="product-note" key={benefit.title}><span className="note-index">0{i + 1}</span><div><h3>{benefit.title}</h3><p>{benefit.detail}</p></div></div>)}</div>
+      <p className="preparation-note">Preparación ilustrativa · Consulta las indicaciones del empaque.</p>
+    </div>
     <div className={`product-stage${thermo ? ' thermo-procedural' : ''}${nocarb ? ' nocarb-procedural' : ''}${beauty ? ' beauty-procedural' : ''}`} aria-hidden="true">
       {thermo && <div className="thermo-studio-light" />}
       <div className="sachet"><div className="sachet-body"><Pack product={product} priority={index === 0} /></div><div className="sachet-tear"><Pack product={product} priority={index === 0} /></div>{thermo && <><div className="thermo-mouth" /><i className="thermo-emitter" /></>}</div>
@@ -32,7 +37,5 @@ export default function ProductScene({ product, index, staticFrame }: { product:
       {/* Reusing one studio prop gives the three chapters a cohesive film language. */}
       <Glass photoreal />
     </div>
-    <div className="product-notes">{product.benefits.map((benefit, i) => <div className="product-note" key={benefit.title}><span className="note-index">0{i + 1}</span><div><h3>{benefit.title}</h3><p>{benefit.detail}</p></div></div>)}</div>
-    <p className="preparation-note">Preparación ilustrativa · Consulta las indicaciones del empaque.</p>
   </section>;
 }
