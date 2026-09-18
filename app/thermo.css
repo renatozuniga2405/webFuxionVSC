@@ -1,0 +1,70 @@
+/* Phase 03: all art-direction overrides are scoped to Thermo T3. */
+.thermo-video-layer{position:absolute;inset:0;z-index:1;overflow:hidden;background:#14110e}
+.thermo-video{display:block;width:100%;height:100%;object-fit:cover;object-position:center center;opacity:0;transform:scale(1.015);will-change:transform,opacity}
+.thermo-scene.is-video-ready .thermo-video{opacity:1}
+.is-cinematic .thermo-scene .thermo-procedural{display:none}
+.thermo-scene .product-editorial,.thermo-scene .product-notes,.thermo-scene .preparation-note{z-index:3;text-shadow:0 2px 18px rgb(11 8 5 / .48)}
+.thermo-scene .editorial-scrim{position:absolute;inset:0;z-index:2;pointer-events:none;opacity:0;background:linear-gradient(90deg,rgb(12 9 6 / .56) 0%,rgb(12 9 6 / .34) 34%,rgb(12 9 6 / .10) 57%,transparent 74%)}
+.thermo-scene .product-editorial::before,.thermo-scene .product-notes::before{content:"";position:absolute;inset:-20px -18px;z-index:-1;background:linear-gradient(90deg,rgb(18 13 9 / .42),rgb(18 13 9 / .15) 70%,transparent);filter:blur(10px);pointer-events:none}
+.thermo-scene .product-stage{left:40%;top:18%;width:54%;height:64%;perspective:none}
+.thermo-scene .sachet{top:0;left:0;width:min(88%,470px);height:auto;aspect-ratio:566/153;transform-origin:50% 50%;filter:drop-shadow(0 18px 14px #000b) drop-shadow(0 0 1px #e7b17a70);z-index:3}
+.thermo-scene .sachet::after{content:"";position:absolute;inset:2% 1%;pointer-events:none;mix-blend-mode:screen;opacity:.33;background:linear-gradient(116deg,transparent 18%,#fff6dc39 42%,transparent 62%,#eda45b22 87%);clip-path:inherit}
+.thermo-scene .sachet-body{clip-path:polygon(0 0,94% 0,93.6% 16%,94.2% 28%,93.7% 40%,94.1% 55%,93.5% 71%,94% 85%,94% 100%,0 100%)}
+.thermo-scene .sachet-tear{clip-path:polygon(94% 0,100% 0,100% 100%,94% 100%,94% 85%,93.5% 71%,94.1% 55%,93.7% 40%,94.2% 28%,93.6% 16%);transform-origin:94% 30%}
+.thermo-mouth{position:absolute;left:94%;top:50%;height:39%;width:11px;transform:translate(-50%,-50%);background:linear-gradient(90deg,#b7aba0,#19130e 28%,#070605 65%,#b6a794);border:1px solid #d8c4ae;border-radius:50%;box-shadow:2px 0 5px #edb87155;opacity:0;z-index:4}
+.thermo-emitter{position:absolute;left:94%;top:50%;width:0;height:0}
+.thermo-powder{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:4}
+.thermo-studio-light{position:absolute;inset:4% -7% -8%;background:radial-gradient(ellipse at 68% 36%,#d7843139,transparent 30%),radial-gradient(ellipse at 88% 58%,#f0a14b12,transparent 28%),radial-gradient(ellipse at 51% 78%,#d8792918,transparent 48%);opacity:.72;pointer-events:none}
+.thermo-studio-light::before,.thermo-studio-light::after{content:"";position:absolute;border-radius:50%;background:#eea653;filter:blur(1px);opacity:.14}.thermo-studio-light::before{width:5px;height:5px;top:25%;left:18%;box-shadow:70px 90px 0 1px #ed9e4d,230px -20px 0 -1px #ffcc83,390px 130px 0 0 #da7e32}.thermo-studio-light::after{width:2px;height:2px;top:62%;left:11%;box-shadow:90px -80px 0 1px #ffd69b,277px 35px 0 0 #e88634,410px -30px 0 -1px #f6bc72}
+.thermo-scene .glass-assembly{min-height:0;z-index:2;isolation:isolate}
+.thermo-scene .glass{display:none}
+.thermo-scene .thermo-glass-photo{position:absolute;inset:0;z-index:7;width:100%;height:100%;object-fit:fill;filter:drop-shadow(0 12px 9px #000b) drop-shadow(7px 0 9px #d8893735);pointer-events:none}
+.thermo-scene .thermo-liquid-canvas{position:absolute;left:12%;right:12%;top:18%;width:76%;height:64%;z-index:9;pointer-events:none;clip-path:polygon(3% 0,97% 0,92% 100%,8% 100%);mix-blend-mode:multiply}
+.thermo-scene .glass-liquid{position:absolute;inset:34% 14% 18%;z-index:8;overflow:hidden;clip-path:polygon(3% 0,97% 0,92% 100%,8% 100%);border-radius:0 0 14% 14%;opacity:1;transform:none;mix-blend-mode:normal;background:linear-gradient(105deg,rgba(180,208,212,.12),rgba(245,237,208,.16) 51%,rgba(142,174,184,.10));box-shadow:inset 0 10px 13px #ffffff36,inset 0 -12px 18px #7f9fb31b}
+.thermo-scene .liquid-surface{height:6px;top:-3px;border-top:1px solid rgba(255,251,235,.72);border-bottom:1px solid rgba(118,151,164,.19);background:linear-gradient(90deg,rgba(255,255,255,.08),rgba(255,250,222,.38),rgba(255,255,255,.08));box-shadow:0 2px 5px #ffffff22}
+.thermo-scene .liquid-glow{filter:blur(15px);background:#db9a4c18;opacity:.36}
+.thermo-scene .glass-shadow{background:radial-gradient(ellipse,#b66f3450 0%,#21130a8a 39%,transparent 73%);filter:blur(11px);opacity:.9;bottom:-7%;height:15%;z-index:0}
+.thermo-scene .glass-assembly::after{content:"";position:absolute;z-index:10;inset:15% 9% 8%;pointer-events:none;border-radius:45% 44% 19% 19%;background:linear-gradient(105deg,#fff8df24 0 2%,transparent 13% 79%,#e9a6582b 96%);mix-blend-mode:screen}
+.thermo-scene .product-editorial{left:7%;top:27%;width:29%}
+.thermo-scene .product-notes{left:7%;top:62%;width:29%}
+.thermo-scene .scene-watermark{font-size:14vw;left:4%;right:4%;max-width:92%;overflow:clip}
+.thermo-scene .preparation-note{right:7%;bottom:102px}
+/* Static/no-JS uses a complete product + prepared drink composition. */
+.experience:not(.is-cinematic) .thermo-scene .product-stage{left:40%;top:18%;width:54%;height:64%}
+.experience:not(.is-cinematic) .thermo-scene .thermo-procedural{display:none}
+.experience:not(.is-cinematic) .thermo-scene .thermo-video{opacity:1;transform:none}
+.experience:not(.is-cinematic) .thermo-scene .sachet{left:3%;top:20%;width:min(78%,440px);height:auto;transform:rotate(-4deg)}
+.experience:not(.is-cinematic) .thermo-scene .glass-assembly{display:block;left:68%;top:59%;width:20%;height:36%;max-height:188px}
+.experience:not(.is-cinematic) .thermo-scene .thermo-powder{display:none}
+.experience:not(.is-cinematic) .thermo-scene .liquid-swirl{opacity:0}
+.experience:not(.is-cinematic) .thermo-scene .preparation-note{display:block}
+@media(min-resolution:2dppx){.experience:not(.is-cinematic) .thermo-scene .sachet{max-width:283px}}
+@media(min-resolution:3dppx){.experience:not(.is-cinematic) .thermo-scene .sachet{max-width:188.66px}}
+@media(max-width:699px){
+ .thermo-scene .editorial-scrim{background:linear-gradient(0deg,rgb(12 9 6 / .60) 0%,rgb(12 9 6 / .28) 42%,transparent 72%)}
+ .thermo-video{object-position:53% center}
+ .thermo-scene .product-editorial::before,.thermo-scene .product-notes::before{inset:-13px -12px;background:linear-gradient(180deg,rgb(18 13 9 / .48),rgb(18 13 9 / .12))}
+ .thermo-scene .product-stage,.experience:not(.is-cinematic) .thermo-scene .product-stage{left:5%;top:13%;width:90%;height:43%}
+ .thermo-scene .product-editorial{left:7%;top:61%;width:86%}
+ .thermo-scene .product-editorial .eyebrow{font-size:8px;letter-spacing:2px;margin:0 0 9px}
+ .thermo-scene .product-editorial h2{font-size:32px;margin:0 0 9px}
+ .thermo-scene .editorial-subtitle{font-size:17px;max-width:none;line-height:1.35}
+ .thermo-scene .product-notes,.experience:not(.is-cinematic) .thermo-scene .product-notes{left:7%;top:79%;width:86%;display:grid;grid-template-columns:1fr 1fr;gap:18px}
+ .thermo-scene .product-note{gap:7px}
+ .thermo-scene .product-note h3{font-size:11px}
+ .thermo-scene .product-note p{font-size:9px;line-height:1.45}
+ .thermo-scene .preparation-note{left:7%;right:5%;font-size:7px;bottom:98px}
+ .thermo-scene .scene-watermark{top:28%;font-size:18vw}
+ .experience:not(.is-cinematic) .thermo-scene .sachet{left:5%;top:18%;width:82%}
+ .experience:not(.is-cinematic) .thermo-scene .glass-assembly{width:25%;left:57%;top:60%;height:37%}
+}
+@media(max-width:699px) and (max-height:700px){
+ .thermo-scene .product-stage{top:15%;height:39%}
+ .thermo-scene .product-editorial{top:57%}
+ .thermo-scene .product-editorial h2{font-size:26px;margin-bottom:5px}
+ .thermo-scene .product-editorial .eyebrow{margin-bottom:5px}
+ .thermo-scene .editorial-subtitle{font-size:14px}
+ .thermo-scene .product-notes{top:76%;gap:9px}
+ .thermo-scene .product-note h3{font-size:10px}.thermo-scene .product-note p{font-size:8px}
+ .thermo-scene .preparation-note{display:none}
+}
