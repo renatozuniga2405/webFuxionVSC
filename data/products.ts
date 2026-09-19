@@ -16,7 +16,7 @@ export const products: Product[] = [
       { title: '🔥 Activa tu rutina', detail: 'Ideal para complementar tus momentos de movimiento y ejercicio.' },
       { title: '🍃 Mezcla botánica', detail: 'Con té verde y otros ingredientes de origen vegetal.' }
     ],
-    image: '/products/thermo-t/pack.svg',
+    image: '/products/thermo-t/pack.png',
     accent: '#ed8b47',
     sceneConfig: { entryX: 100, tilt: -12, pourTilt: 28, liquid: '#bb7130' }
   },
@@ -29,7 +29,7 @@ export const products: Product[] = [
       { title: '⚖️ Balance nutricional', detail: 'Una opción pensada para acompañar un estilo de vida equilibrado.' },
       { title: '🌿 Aliado de tu rutina', detail: 'Fácil de incorporar como parte de tus hábitos diarios de alimentación.' }
     ],
-    image: '/products/nocarb-t/pack.svg',
+    image: '/products/nocarb-t/pack.png',
     accent: '#e29a62',
     sceneConfig: { entryX: -120, tilt: 9, pourTilt: 23, liquid: '#a85b29' }
   },
@@ -42,7 +42,7 @@ export const products: Product[] = [
       { title: '💧 Cuidado de la piel', detail: 'Acompaña tu rutina de cuidado personal desde la nutrición.' },
       { title: '🌸 Ritual de belleza', detail: 'Una forma práctica de integrar bienestar y belleza en tu día a día.' }
     ],
-    image: '/products/beauty-in/pack.svg',
+    image: '/products/beauty-in/pack.png',
     accent: '#d8b575',
     sceneConfig: { entryX: 40, tilt: -7, pourTilt: 20, liquid: '#c77b7c' }
   }
