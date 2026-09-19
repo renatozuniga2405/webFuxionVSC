@@ -50,5 +50,5 @@ export const products: Product[] = [
 
 export const experienceCopy = {
   intro: { eyebrow: 'TRES PRODUCTOS. UN NUEVO HÁBITO.', title: 'NUTRICIÓN EN', titleEnd: 'MOVIMIENTO', invitation: 'Hay momentos que lo cambian todo.', scroll: 'Desliza para descubrir' },
-  final: { eyebrow: 'EL SIGUIENTE MOMENTO ES TUYO', title: 'TRANSFORMA', titleEnd: 'TU RUTINA', description: 'Tres experiencias. Un nuevo hábito.', cta: { label: 'Volver a vivir la experiencia', href: '#inicio' } },
+  final: { eyebrow: 'EL SIGUIENTE MOMENTO ES TUYO', title: 'TRANSFORMA', titleEnd: 'TU RUTINA', description: 'Tres experiencias. Un nuevo hábito.' },
 };

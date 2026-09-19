@@ -61,6 +61,6 @@ export default function Experience() {
       <FinalScene replay={() => goTo(0)} />
       <footer className="experience-controls"><div className="timeline-track"><div className="timeline-fill" /></div><span className="chapter-count">0{chapter + 1}<span> / 05</span></span><nav aria-label="Capítulos de la experiencia">{chapters.map((label, index) => <button key={label} onClick={() => goTo(index)} aria-current={chapter === index ? 'step' : undefined}><span className="chapter-dot" />{label}</button>)}</nav><span className="scroll-caption">SCROLL PARA EXPLORAR <span aria-hidden="true">↓</span></span></footer>
     </div>
-    <WhatsAppButton />
+    <WhatsAppButton isFinal={chapter === 4} />
   </main>;
 }

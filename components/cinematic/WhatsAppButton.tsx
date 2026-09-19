@@ -1,4 +1,4 @@
-export default function WhatsAppButton() {
+export default function WhatsAppButton({ isFinal }: { isFinal?: boolean }) {
   const phone = '51972081522';
   const message = encodeURIComponent('Hola FUXION, quisiera más información sobre sus productos.');
   const url = `https://wa.me/${phone}?text=${message}`;
@@ -8,8 +8,10 @@ export default function WhatsAppButton() {
       href={url}
       target="_blank"
       rel="noopener noreferrer"
-      className="wsp-float-btn"
+      className={`wsp-float-btn ${isFinal ? 'is-final' : ''}`}
       aria-label="Contactar por WhatsApp al +51972081522"
+      tabIndex={isFinal ? -1 : 0}
+      aria-hidden={isFinal ? 'true' : undefined}
     >
       <svg
         viewBox="0 0 32 32"
