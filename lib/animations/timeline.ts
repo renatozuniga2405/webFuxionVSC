@@ -6,7 +6,7 @@ import { createNocarbVideoScene } from './nocarb-video';
 import { createIntroVideoScene } from './intro-video';
 import { createBeautyVideoScene } from './beauty-video';
 
-export const CHAPTER_TIMES = [0, 3.25, 7.20, 11.70, 18.10];
+export const CHAPTER_TIMES = [0, 4.80, 9.00, 13.50, 18.10];
 export const DURATION = 20.10;
 
 export function createExperience(root: HTMLElement, onChapter: (chapter: number) => void, initialProgress = 0) {
@@ -80,10 +80,10 @@ export function createExperience(root: HTMLElement, onChapter: (chapter: number)
           .to(scene, { autoAlpha: 1, duration: 0.2 }, start)
           .to('.backlight', { backgroundColor: product.accent, duration: 0.8 }, start)
           .fromTo(q('.thermo-video'), { autoAlpha: 0, scale: 1.015 }, { autoAlpha: 1, scale: 1, duration: 0.32 }, start)
-          .to(q('.product-content-panel'), { autoAlpha: 1, y: 0, filter: 'blur(0px)', duration: 0.55, ease: 'power2.out' }, start + 1.00)
-          .to(q('.editorial-scrim'), { opacity: .55, duration: 0.4 }, start + 1.00)
-          .to(q('.product-content-panel'), { autoAlpha: 0, y: -16, filter: 'blur(4px)', duration: 0.32, ease: 'power2.in' }, start + 3.90)
-          .to(q('.editorial-scrim'), { opacity: 0, duration: 0.25 }, start + 3.95)
+          .to(q('.product-content-panel'), { autoAlpha: 1, y: 0, filter: 'blur(0px)', duration: 0.45, ease: 'power2.out' }, start + 0.90)
+          .to(q('.editorial-scrim'), { opacity: .55, duration: 0.4 }, start + 0.90)
+          .to(q('.product-content-panel'), { autoAlpha: 0, y: -16, filter: 'blur(4px)', duration: 0.35, ease: 'power2.in' }, start + 2.90)
+          .to(q('.editorial-scrim'), { opacity: 0, duration: 0.30 }, start + 2.90)
           .to(scene, { autoAlpha: 0, duration: 0.12 }, start + 4.30);
         return;
       }
@@ -95,10 +95,10 @@ export function createExperience(root: HTMLElement, onChapter: (chapter: number)
           .to(scene, { autoAlpha: 1, duration: 0.12 }, start)
           .to('.backlight', { backgroundColor: product.accent, duration: 0.45 }, start + 0.20)
           .fromTo(q('.nocarb-video'), { autoAlpha: 0 }, { autoAlpha: 1, duration: 0.10 }, start + 0.16)
-          .to(q('.product-content-panel'), { autoAlpha: 1, y: 0, filter: 'blur(0px)', duration: 0.55, ease: 'power2.out' }, start + 1.00)
-          .to(q('.editorial-scrim'), { opacity: .55, duration: 0.4 }, start + 1.00)
-          .to(q('.product-content-panel'), { autoAlpha: 0, y: -16, filter: 'blur(4px)', duration: 0.32, ease: 'power2.in' }, start + 4.25)
-          .to(q('.editorial-scrim'), { opacity: 0, duration: 0.25 }, start + 4.30)
+          .to(q('.product-content-panel'), { autoAlpha: 1, y: 0, filter: 'blur(0px)', duration: 0.45, ease: 'power2.out' }, start + 0.90)
+          .to(q('.editorial-scrim'), { opacity: .55, duration: 0.4 }, start + 0.90)
+          .to(q('.product-content-panel'), { autoAlpha: 0, y: -16, filter: 'blur(4px)', duration: 0.35, ease: 'power2.in' }, start + 2.90)
+          .to(q('.editorial-scrim'), { opacity: 0, duration: 0.30 }, start + 2.90)
           .to(scene, { autoAlpha: 0, scale: 1.1, duration: 0.45 }, start + 4.72)
           .fromTo('.transition-light', { opacity: 0, scale: 0.6, xPercent: -15 }, { opacity: 0.5, scale: 1.2, xPercent: 15, duration: 0.25 }, start + 4.75)
           .to('.transition-light', { opacity: 0, scale: 1.8, duration: 0.3 }, start + 5.03);
@@ -115,10 +115,10 @@ export function createExperience(root: HTMLElement, onChapter: (chapter: number)
           .to(scene, { autoAlpha: 1, duration: .12 }, beautyStart)
           .to('.backlight', { backgroundColor: product.accent, duration: .35 }, beautyStart + .18)
           .fromTo(q('.beauty-video'), { autoAlpha: 0 }, { autoAlpha: 1, duration: .12 }, beautyStart)
-          .to(q('.product-content-panel'), { autoAlpha: 1, y: 0, filter: 'blur(0px)', duration: 0.55, ease: 'power2.out' }, beautyStart + 1.00)
-          .to(q('.editorial-scrim'), { opacity: .45, duration: 0.4 }, beautyStart + 1.00)
-          .to(q('.product-content-panel'), { autoAlpha: 0, y: -16, filter: 'blur(4px)', duration: 0.32, ease: 'power2.in' }, beautyStart + 4.55)
-          .to(q('.editorial-scrim'), { opacity: 0, duration: 0.25 }, beautyStart + 4.60)
+          .to(q('.product-content-panel'), { autoAlpha: 1, y: 0, filter: 'blur(0px)', duration: 0.45, ease: 'power2.out' }, beautyStart + 0.90)
+          .to(q('.editorial-scrim'), { opacity: .45, duration: 0.4 }, beautyStart + 0.90)
+          .to(q('.product-content-panel'), { autoAlpha: 0, y: -16, filter: 'blur(4px)', duration: 0.35, ease: 'power2.in' }, beautyStart + 2.90)
+          .to(q('.editorial-scrim'), { opacity: 0, duration: 0.30 }, beautyStart + 2.90)
           .to(scene, { autoAlpha: 0, duration: .12 }, beautyStart + 5.0);
         return;
       }
@@ -130,7 +130,7 @@ export function createExperience(root: HTMLElement, onChapter: (chapter: number)
       timeline.to(scene, { autoAlpha: 1, duration: 0.35 }, start)
         .to('.backlight', { backgroundColor: product.accent, duration: 0.8 }, start)
         .to(q('.sachet'), { x: 0, y: 0, scale: 1, duration: 0.75 }, start)
-        .to(q('.product-content-panel'), { autoAlpha: 1, y: 0, duration: 0.5 }, start + 1.00)
+        .to(q('.product-content-panel'), { autoAlpha: 1, y: 0, duration: 0.45 }, start + 0.90)
         .to(q('.sachet'), { x: () => mobile() ? -15 : 35, y: () => mobile() ? -30 : -80, scale: () => mobile() ? 0.85 : 0.78, rotation: product.sceneConfig.pourTilt, duration: 0.65 }, start + 0.85)
         .to(q('.sachet-tear'), { x: 28, y: -55, rotation: 18, opacity: 0, duration: 0.35 }, start + 1)
         .to(q('.glass-assembly'), { opacity: 1, y: 0, duration: 0.5 }, start + 1.05)
@@ -139,7 +139,7 @@ export function createExperience(root: HTMLElement, onChapter: (chapter: number)
         .to(q('.glass-liquid'), { scaleY: 0.75, duration: 0.65 }, start + 1.58)
         .to(q('.liquid-swirl'), { rotation: 240 + i * 40, scale: 1.2, duration: 0.9 }, start + 1.65)
         .to(q('.powder'), { opacity: 0, duration: 0.25 }, start + 2.1)
-        .to(q('.product-content-panel'), { autoAlpha: 0, y: -16, duration: 0.3 }, start + 2.80)
+        .to(q('.product-content-panel'), { autoAlpha: 0, y: -16, duration: 0.35 }, start + 2.90)
         .to(scene, { autoAlpha: 0, scale: i === 2 ? 0.96 : 1.1, duration: 0.45 }, start + 3.05)
         .fromTo('.transition-light', { opacity: 0, scale: 0.6, xPercent: -15 }, { opacity: 0.5, scale: 1.2, xPercent: 15, duration: 0.25 }, start + 3.08)
         .to('.transition-light', { opacity: 0, scale: 1.8, duration: 0.3 }, start + 3.33);
