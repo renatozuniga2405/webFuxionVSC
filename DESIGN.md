@@ -24,7 +24,7 @@ Spanish-language product film controlled by native scrolling. The signature is a
 ## Colors
 Runtime source: app/globals.css :root variables --background, --foreground, --muted, --accent (primary), --gold. Per-product lighting is owned by data/products.ts. Deep black, restrained amber and gold. No medical claims or invented results.
 ## Typography
-Large tightly tracked sans-serif display paired with restrained italic Georgia for the human ritual. Small tracked uppercase navigational captions. System fonts avoid layout shifts and external font requests.
+Large tightly tracked sans-serif display paired with restrained italic Georgia for the human habit. Small tracked uppercase navigational captions. System fonts avoid layout shifts and external font requests.
 ## Layout
 One viewport stage with header and chapter navigation. Products centered in a wide pool of light. Editorial product information sits to the left; the preparation appears right of center. Under 700px, compact vertically arranged stage. Reduced motion and no-JavaScript use document flow.
 ## Elevation & Depth

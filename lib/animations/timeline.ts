@@ -6,7 +6,7 @@ import { createNocarbVideoScene } from './nocarb-video';
 import { createIntroVideoScene } from './intro-video';
 import { createBeautyVideoScene } from './beauty-video';
 
-export const CHAPTER_TIMES = [0, 4.80, 9.00, 13.50, 18.10];
+export const CHAPTER_TIMES = [0, 4.80, 9.00, 13.50, 20.10];
 export const DURATION = 20.10;
 
 export function createExperience(root: HTMLElement, onChapter: (chapter: number) => void, initialProgress = 0) {
@@ -158,7 +158,12 @@ export function createExperience(root: HTMLElement, onChapter: (chapter: number)
     getProgress() { return timeline.progress(); },
     goTo(chapter: number) {
       const trigger = timeline.scrollTrigger;
-      if (trigger) window.scrollTo({ top: trigger.start + (trigger.end - trigger.start) * CHAPTER_TIMES[chapter] / DURATION, behavior: 'smooth' });
+      if (trigger) {
+        const targetScroll = chapter === 4
+          ? trigger.end
+          : trigger.start + (trigger.end - trigger.start) * CHAPTER_TIMES[chapter] / DURATION;
+        window.scrollTo({ top: targetScroll, behavior: 'smooth' });
+      }
     },
     destroy() {
       window.removeEventListener('resize', onResize); cancelAnimationFrame(restoreFrame);

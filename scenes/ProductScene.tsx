@@ -25,7 +25,7 @@ export default function ProductScene({ product, index, staticFrame }: { product:
     <div className="editorial-scrim" aria-hidden="true" />
     <div className="scene-watermark" aria-hidden="true">{product.name}</div>
     <div className="product-content-panel">
-      <div className="product-editorial"><p className="eyebrow">0{index + 1} <span /> EL RITUAL</p><h2 id={`${product.slug}-title`}>{product.name}</h2><p className="editorial-subtitle">{product.subtitle}</p>{product.description && <p className="product-description">{product.description}</p>}</div>
+      <div className="product-editorial"><p className="eyebrow">0{index + 1} <span /> EL HÁBITO</p><h2 id={`${product.slug}-title`}>{product.name}</h2><p className="editorial-subtitle">{product.subtitle}</p>{product.description && <p className="product-description">{product.description}</p>}</div>
       <div className="product-panel-divider" aria-hidden="true" />
       <div className="product-notes">{product.benefits.map((benefit, i) => <div className="product-note" key={benefit.title}><span className="note-index">0{i + 1}</span><div><h3>{benefit.title}</h3><p>{benefit.detail}</p></div></div>)}</div>
       <p className="preparation-note">Preparación ilustrativa · Consulta las indicaciones del empaque.</p>

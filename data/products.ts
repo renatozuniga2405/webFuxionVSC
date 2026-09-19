@@ -5,7 +5,7 @@ export type Product = {
   sceneConfig: { entryX: number; tilt: number; pourTilt: number; liquid: string };
 };
 
-// Official nutritional and ritual characteristics per product
+// Official nutritional and habit characteristics per product
 export const products: Product[] = [
   {
     slug: 'thermo-t',
@@ -36,11 +36,11 @@ export const products: Product[] = [
   {
     slug: 'beauty-in',
     name: 'BEAUTY-IN',
-    subtitle: 'Belleza desde el interior · Cuidado de la piel · Ritual de belleza',
+    subtitle: 'Belleza desde el interior · Cuidado de la piel · Hábito de belleza',
     benefits: [
       { title: '✨ Belleza desde el interior', detail: 'Nutrición pensada para complementar tu rutina diaria de belleza.' },
       { title: '💧 Cuidado de la piel', detail: 'Acompaña tu rutina de cuidado personal desde la nutrición.' },
-      { title: '🌸 Ritual de belleza', detail: 'Una forma práctica de integrar bienestar y belleza en tu día a día.' }
+      { title: '🌸 Hábito de belleza', detail: 'Una forma práctica de integrar bienestar y belleza en tu día a día.' }
     ],
     image: '/products/beauty-in/pack.png',
     accent: '#d8b575',
@@ -49,6 +49,6 @@ export const products: Product[] = [
 ];
 
 export const experienceCopy = {
-  intro: { eyebrow: 'TRES PRODUCTOS. UN NUEVO RITUAL.', title: 'NUTRICIÓN EN', titleEnd: 'MOVIMIENTO', invitation: 'Hay momentos que lo cambian todo.', scroll: 'Desliza para descubrir' },
-  final: { eyebrow: 'EL SIGUIENTE MOMENTO ES TUYO', title: 'TRANSFORMA', titleEnd: 'TU RUTINA', description: 'Tres experiencias. Un nuevo ritual.', cta: { label: 'Volver a vivir la experiencia', href: '#inicio' } },
+  intro: { eyebrow: 'TRES PRODUCTOS. UN NUEVO HÁBITO.', title: 'NUTRICIÓN EN', titleEnd: 'MOVIMIENTO', invitation: 'Hay momentos que lo cambian todo.', scroll: 'Desliza para descubrir' },
+  final: { eyebrow: 'EL SIGUIENTE MOMENTO ES TUYO', title: 'TRANSFORMA', titleEnd: 'TU RUTINA', description: 'Tres experiencias. Un nuevo hábito.', cta: { label: 'Volver a vivir la experiencia', href: '#inicio' } },
 };

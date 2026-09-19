@@ -7,8 +7,8 @@ import FinalScene from '@/scenes/FinalScene';
 import WhatsAppButton from './WhatsAppButton';
 import { products } from '@/data/products';
 
-const chapters = ['Fuxion', ...products.map(p => p.name), 'Tu ritual'];
-const ids = ['inicio', ...products.map(p => p.slug), 'ritual'];
+const chapters = ['Fuxion', ...products.map(p => p.name), 'Tu hábito'];
+const ids = ['inicio', ...products.map(p => p.slug), 'habito'];
 export default function Experience() {
   const root = useRef<HTMLElement>(null);
   const controller = useRef<{ goTo: (chapter: number) => void; getProgress: () => number; destroy: () => void } | null>(null);
@@ -40,12 +40,19 @@ export default function Experience() {
     };
   }, [ready, simple]);
   function goTo(index: number) {
-    if (controller.current) controller.current.goTo(index);
-    else document.getElementById(ids[index])?.scrollIntoView({ behavior: 'instant', block: 'start' });
+    if (controller.current) {
+      controller.current.goTo(index);
+    } else {
+      if (index === 4) {
+        window.scrollTo({ top: document.documentElement.scrollHeight, behavior: 'smooth' });
+      } else {
+        document.getElementById(ids[index])?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }
     setChapter(index);
   }
   return <main ref={root} className={`experience ${simple ? 'is-static' : ''}`}>
-    <a className="skip-link" href="#ritual" onClick={event => { event.preventDefault(); goTo(4); }}>Ir al cierre de la experiencia</a>
+    <a className="skip-link" href="#habito" onClick={event => { event.preventDefault(); goTo(4); }}>Ir al cierre de la experiencia</a>
     <div className="cinema-stage">
       <header className="site-header"><button className="wordmark" aria-label="Fuxion, volver al inicio" onClick={() => goTo(0)}>FU<span>X</span>ION<span className="brand-dot">®</span></button><span className="header-caption">NUTRICIÓN EN MOVIMIENTO</span><button className="view-toggle" onClick={() => setStaticView(v => !v)} aria-pressed={simple} disabled={reducedMotion}>{simple ? 'Vista sin animación' : 'Ver sin animación'} <span aria-hidden="true">{simple ? '◉' : '◎'}</span></button></header>
       <Atmosphere />
